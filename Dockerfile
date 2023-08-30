@@ -32,7 +32,9 @@ ENV CUSTOM_PORT="8080" \
 # Add local files
 COPY root/ /
 EXPOSE 8080 8443
-VOLUME ["/config","/vaults"]
+#VOLUME ["/config","/vaults"]
+RAILWAY_VOLUME_NAME hospital-disk
+RAILWAY_VOLUME_MOUNT_PATH ["/config","/vaults"]
 
 # Define a healthcheck
 HEALTHCHECK CMD curl --fail http://localhost:8080/ || exit 1
