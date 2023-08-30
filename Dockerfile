@@ -33,7 +33,6 @@ ENV CUSTOM_PORT="8080" \
 COPY root/ /
 EXPOSE 8080 8443
 #VOLUME ["/config","/vaults"]
-RAILWAY_VOLUME_MOUNT_PATH ["/config","/vaults"]
 
 # Define a healthcheck
 HEALTHCHECK CMD curl --fail http://localhost:8080/ || exit 1
